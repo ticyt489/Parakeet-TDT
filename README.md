@@ -1,4 +1,4 @@
-# Audio Transcription App with Parakeet-TDT-0.6b-v2
+# Audio Transcription App with Parakeet-TDT-0.6b-v3
 
 This is a Gradio web application that uses NVIDIA's Parakeet-TDT-0.6b model for automatic speech recognition with timestamp functionality.
 
@@ -21,7 +21,7 @@ Install via [Pinokio](https://pinokio.computer).
 
 1. Clone this repository:
    ```
-   git clone https://github.com/SUP3RMASS1VE/Parakeet-TDT.git
+   git clone https://github.com/ticyt489/Parakeet-TDT.git
    cd Parakeet-TDT
    ```
 
@@ -50,11 +50,11 @@ Install via [Pinokio](https://pinokio.computer).
 
 ## Model Information
 
-This application uses NVIDIA's Parakeet-TDT-0.6b-v2 model:
+This application uses NVIDIA's Parakeet-TDT-0.6b-v3 model:
 - 600-million-parameter automatic speech recognition (ASR) model
 - Supports punctuation, capitalization, and accurate timestamp prediction
 - Trained on diverse English speech data
-- More information: [Hugging Face Model Card](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v2)
+- More information: [Hugging Face Model Card](https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3)
 
 ## License
 
@@ -65,3 +65,4 @@ This project is licensed under the terms of the CC-BY-4.0 license, consistent wi
 - NVIDIA for creating and releasing the Parakeet-TDT model
 - Hugging Face for hosting the model
 - Gradio for the web interface framework 
+
