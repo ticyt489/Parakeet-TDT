@@ -1,8 +1,8 @@
 const path = require('path')
 module.exports = {
-  version: "3.7",
+  version: "4",
   title: "Parakeet-TDT",
-  description: "Audio Transcription App with Parakeet-TDT-0.6b-v2",
+  description: "Audio Transcription App with Parakeet-TDT-0.6b-v3",
   icon: "icon.png",
   menu: async (kernel, info) => {
     let installed = info.exists("env")
