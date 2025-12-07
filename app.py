@@ -12,18 +12,6 @@ import numpy as np
 import subprocess
 import math
 
-# Suppress all warnings and logging before importing other modules
-os.environ['NEMO_LOG_LEVEL'] = 'ERROR'
-os.environ['HYDRA_FULL_ERROR'] = '0'
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-os.environ['PYTHONWARNINGS'] = 'ignore'
-os.environ['NEMO_EXPM_VERSION'] = 'NONE'
-warnings.filterwarnings('ignore')
-
-# Configure logging to suppress everything except critical errors
-logging.basicConfig(level=logging.CRITICAL)
-logging.getLogger().setLevel(logging.CRITICAL)
-
 # Suppress specific loggers before imports
 for logger_name in ['nemo_logger', 'pytorch_lightning', 'apex', 'NeMo', 'megatron', 'nemo', 'nemo.collections', 'nemo.core', 'nemo.utils']:
     logging.getLogger(logger_name).setLevel(logging.CRITICAL)
@@ -424,7 +412,8 @@ with gr.Blocks(css="footer {visibility: hidden}") as app:
     with gr.Row():
         with gr.Column():
             with gr.Tab("Upload Audio File"):
-                audio_input = gr.Audio(type="filepath", label="Upload Audio File")
+                audio_input = gr.File(label="Upload Audio File", file_types=["audio"])
+
             
             with gr.Tab("Upload Video File"):
                 video_input = gr.Video(label="Upload Video File")
@@ -453,7 +442,6 @@ with gr.Blocks(css="footer {visibility: hidden}") as app:
             transcript_html = gr.HTML(label="Transcript Segments (Click a row to play)")
             csv_output = gr.File(label="Download Transcript CSV")
             srt_output = gr.File(label="Download Transcript SRT")
-            audio_playback = gr.Audio(label="Audio Playback", elem_id="audio_playback", interactive=False)
     
     audio_btn.click(
         transcribe_audio,
@@ -479,26 +467,5 @@ with gr.Blocks(css="footer {visibility: hidden}") as app:
         outputs=[transcript_html]
     )
     
-    audio_input.change(
-        lambda x: x,
-        inputs=[audio_input],
-        outputs=[audio_playback],
-        js=js_code
-    )
-    
-    audio_record.stop_recording(
-        lambda x: x,
-        inputs=[audio_record],
-        outputs=[audio_playback],
-        js=js_code
-    )
-    
-    video_input.change(
-        lambda x: extract_audio_from_video(x, None) if x else None,
-        inputs=[video_input],
-        outputs=[audio_playback],
-        js=js_code
-    )
-
 if __name__ == "__main__":
-    app.launch()
+    app.launch(server_name="0.0.0.0")
