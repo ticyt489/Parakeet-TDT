@@ -10,9 +10,6 @@ This is a Gradio web application that uses NVIDIA's Parakeet-TDT-0.6b model for 
 - Download transcripts as CSV files with timestamps
 - Example audio file included for testing
 
-## Screenshot
-![Screenshot 2025-05-13 160407](https://github.com/user-attachments/assets/8551fc0b-9b4a-42c5-8d7b-eff9150f91c3)
-
 ## Setup and Installation
  
 Install via [Pinokio](https://pinokio.computer).
@@ -65,4 +62,5 @@ This project is licensed under the terms of the CC-BY-4.0 license, consistent wi
 - NVIDIA for creating and releasing the Parakeet-TDT model
 - Hugging Face for hosting the model
 - Gradio for the web interface framework 
+
 
