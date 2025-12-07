@@ -64,13 +64,13 @@ def extract_audio_from_video(video_path, progress=None):
     
     cmd = [
         'ffmpeg',
-        '-y'
+        '-y',
         '-i', video_path,
         '-vn',
         '-acodec', 'pcm_s16le',
         '-ar', '16000',
         '-ac', '1',
-        audio_path,
+        audio_path
     ]
     
     try:
@@ -502,4 +502,5 @@ with gr.Blocks(css="footer {visibility: hidden}") as app:
 
 if __name__ == "__main__":
     app.launch()
+
 
