@@ -468,4 +468,4 @@ with gr.Blocks(css="footer {visibility: hidden}") as app:
     )
     
 if __name__ == "__main__":
-    app.launch(server_name="0.0.0.0")
+    app.launch()
